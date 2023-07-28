@@ -16,6 +16,8 @@ class SearchInterface(QMainWindow):
     def __init__(self):
         super().__init__()
         self.data = None  # DataFrame to store the loaded Excel data
+        if not self.data:
+            self.data = pd.read_excel("data/Literaturrecherche.xlsx", sheet_name="data")
         self.selected_items = set()
         self.logic = "AND"  # Default logic
         self.table_widget = None  # Initialize table_widget to None

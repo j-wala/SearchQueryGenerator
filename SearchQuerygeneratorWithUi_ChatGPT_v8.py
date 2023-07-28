@@ -15,6 +15,12 @@ class SearchInterface(QMainWindow):
         self.selected_items = set()
         self.logic = "AND"  # Default logic
         self.init_ui()
+        self.load_excel_file()
+
+    def load_excel_file(self):
+        if self.data is None:  # Check if data is not already loaded
+            self.data = pd.read_excel("data/Literaturrecherche.xlsx", sheet_name="data")
+            self.init_table()
 
     def init_ui(self):
         self.setWindowTitle("Search Query Generator")
