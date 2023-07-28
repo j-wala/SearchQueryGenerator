@@ -18,9 +18,13 @@ class SearchInterface(QMainWindow):
         self.load_excel_file()
 
     def load_excel_file(self):
-        if self.data is None:  # Check if data is not already loaded
-            self.data = pd.read_excel("data/Literaturrecherche.xlsx", sheet_name="data")
-            self.init_table()
+        try:
+            if self.data is None:  # Check if data is not already loaded
+                self.data = pd.read_excel("data/Literaturrecherche.xlsx", sheet_name="data")
+                self.init_table()
+        except Exception as e:
+            print(f"Error loading Excel file: {e}")
+            self.data = None
 
     def init_ui(self):
         self.setWindowTitle("Search Query Generator")
