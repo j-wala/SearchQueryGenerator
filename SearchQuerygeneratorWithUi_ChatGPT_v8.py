@@ -20,7 +20,7 @@ class SearchInterface(QMainWindow):
     def load_excel_file(self):
         try:
             if self.data is None:  # Check if data is not already loaded
-                self.data = pd.read_excel("data/Literaturrecherche.xlsx", sheet_name="data")
+                self.data = pd.read_excel("data/Literaturrecherche.xlsx", sheet_name="data") # Change this to your excel file or load it via the button
                 self.init_table()
         except Exception as e:
             print(f"Error loading Excel file: {e}")
