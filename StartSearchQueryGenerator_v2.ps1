@@ -1,3 +1,4 @@
+$scriptName = "SearchQuerygeneratorWithUi_ChatGPT_v8.py"
 # Get the directory of the script being executed
 $scriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Path
 
@@ -16,12 +17,12 @@ if (Test-Path $activateScript) {
 
 # Run the main.py file using the activated Python environment
 if (Test-Path $pythonExecutable) {
-    $mainScript = Join-Path $scriptDirectory "SearchQuerygeneratorWithUi_ChatGPT_v8.py"
+    $mainScript = Join-Path $scriptDirectory $scriptName
     if (Test-Path $mainScript) {
         Write-Host "Running Search Query Generator..."
         & $pythonExecutable $mainScript
     } else {
-        Write-Host "SearchQuerygeneratorWithUi_ChatGPT_v8.py file not found."
+        Write-Host "$scriptName file not found."
     }
 } else {
     Write-Host "Python executable not found."
