@@ -1,7 +1,7 @@
 import sys
 import random
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QCheckBox, QTextEdit, QHeaderView, QPushButton, QHBoxLayout, QComboBox, QFileDialog
-from PyQt5.QtGui import QColor, QBrush, QFont
+from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QCheckBox, QTextEdit, QHeaderView, QPushButton, QHBoxLayout, QComboBox, QFileDialog
+from PyQt6.QtGui import QColor, QBrush, QFont
 import pandas as pd
 
 HIGHLIGHT_COLOR = QColor(255, 255, 0)
